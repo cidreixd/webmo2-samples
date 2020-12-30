@@ -1,0 +1,77 @@
+{
+  "name": "webmo2-samples",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "@bit/mui-org.material-ui.button": "^4.9.10",
+    "@bit/mui-org.material-ui.circular-progress": "^4.9.10",
+    "@bit/reactstrap.reactstrap.input": "^8.4.1",
+    "@bit/ronbraha.codebyron.status-indicator.status-indicator": "^0.0.2",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@types/highlight.js": "^10.1.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.14",
+    "@types/styled-components": "^5.1.3",
+    "fast-deep-equal": "^3.1.3",
+    "highlight.js": "^10.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0",
+    "typescript": "~3.7.2",
+    "webmo2-library-javascript": "https://github.com/cidreixd/webmo2-library-javascript.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.5",
+    "@types/url-join": "^4.0.0",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "deep-equal": "^2.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.1.2",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "url-join": "^4.0.1",
+    "uuid": "^8.3.0"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "babel-plugin-styled-components"
+      ]
+    ]
+  }
+}

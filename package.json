@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
+  "repository": "https://github.com/cidreixd/webmo2-samples.git",
+  "license": "MIT",
   "dependencies": {
     "@bit/mui-org.material-ui.button": "^4.9.10",
     "@bit/mui-org.material-ui.circular-progress": "^4.9.10",

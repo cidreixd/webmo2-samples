@@ -7,6 +7,8 @@ hljs.registerLanguage('javascript', javascript)
 export const CodeBlock = ({ code }: { code: string }) => {
   useEffect(() => {
     hljs.initHighlighting()
+    // @ts-ignore
+    hljs.initHighlighting.called = false;
   }, [])
 
   return (

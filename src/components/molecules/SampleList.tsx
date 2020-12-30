@@ -10,8 +10,8 @@ export const SampleList = () => {
       <Title>サンプル集</Title>
       {samplePages.map((sample) => {
         return (
-          <p>
-            <Link to={sample.key} key={sample.key}>
+          <p key={sample.key}>
+            <Link to={sample.key}>
               {getSamplePage(sample.key)?.displayName}
             </Link>
           </p>

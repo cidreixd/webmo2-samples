@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useEffect } from 'react'
 import { useState } from 'react'
 import webmo from 'webmo2-library-javascript'
-import { Text, Title } from '../atoms/Text'
+import { ListText, SubText, Text, Title } from '../atoms/Text'
 import styled from 'styled-components/macro'
 import { Section } from '../atoms/Section'
 import { Input } from '../atoms/Input'
@@ -16,7 +16,7 @@ import { actions } from '../../redux/webmo'
 
 export const WebmoStatus: FC = () => {
   const dispatch = useDispatch()
-  const { isInitialized, ping, websocket } = useSelector(
+  const { isInitialized, ping, websocket, host } = useSelector(
     (state: AppState) => state.webmo,
     equal
   )
@@ -34,8 +34,12 @@ export const WebmoStatus: FC = () => {
 
     dispatch(actions.init())
 
-    webmo.socketClient.events.on('open', () => dispatch(actions.websocketIsOpen()))
-    webmo.socketClient.events.on('close', () => dispatch(actions.websocketIsClose()))
+    webmo.socketClient.events.on('open', () =>
+      dispatch(actions.websocketIsOpen())
+    )
+    webmo.socketClient.events.on('close', () =>
+      dispatch(actions.websocketIsClose())
+    )
 
     const pingCheck = () => {
       const time = Date.now()
@@ -67,21 +71,24 @@ export const WebmoStatus: FC = () => {
   return (
     <>
       <Section>
-        <Title>通信状況</Title>
+        <Title>Webmoとの通信状況</Title>
         <Flex>
-          <Text>HTTP: Ping {ping.state}</Text>
+          <ListText>HTTP: Ping {ping.state}</ListText>
           <StatusIndicator status={ping.indicator} />
         </Flex>
         <Flex>
-          <Text>Websocket: {websocket.state}</Text>
+          <ListText>Websocket: {websocket.state}</ListText>
           <StatusIndicator status={websocket.indicator} />
         </Flex>
-        <Flex>
-          <Input placeholder="webmo.local" onChange={setInputValue} />
-          <Button variant="outlined" onClick={handleHost}>
-            {'設定する'}
-          </Button>
-        </Flex>
+        <FormLayout>
+          <Text>接続先を変更する</Text>
+          <Flex>
+            <Input placeholder={host} onChange={setInputValue} />
+            <Button variant="outlined" onClick={handleHost}>
+              {'設定する'}
+            </Button>
+          </Flex>
+        </FormLayout>
       </Section>
     </>
   )
@@ -89,4 +96,8 @@ export const WebmoStatus: FC = () => {
 
 const Flex = styled.div`
   display: flex;
+`
+
+const FormLayout = styled.div`
+  padding: 8px 0;
 `

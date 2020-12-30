@@ -11394,7 +11394,7 @@ webidl-conversions@^4.0.2:
 
 "webmo2-library-javascript@https://github.com/cidreixd/webmo2-library-javascript.git":
   version "1.0.0"
-  resolved "https://github.com/cidreixd/webmo2-library-javascript.git#36d5b13f793848f9d933d683a7fa230fff74932e"
+  resolved "https://github.com/cidreixd/webmo2-library-javascript.git#fb55b1300a5328e318d894570d1c81bcb865b81b"
   dependencies:
     "@types/url-join" "^4.0.0"
     "@types/uuid" "^8.3.0"

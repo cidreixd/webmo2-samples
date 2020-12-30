@@ -99,7 +99,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={rotate}
             ></ApiButton>
           </ButtonLayout>
@@ -111,7 +111,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={slowRotate}
             ></ApiButton>
           </ButtonLayout>
@@ -123,7 +123,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={fastRotate}
             ></ApiButton>
           </ButtonLayout>
@@ -135,7 +135,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={reverseRotate}
             ></ApiButton>
           </ButtonLayout>
@@ -147,7 +147,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={singleRotate}
             ></ApiButton>
           </ButtonLayout>
@@ -161,7 +161,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={syncRotate}
             ></ApiButton>
           </ButtonLayout>
@@ -169,7 +169,7 @@ const RotateContainer: FC = () => {
         <Section>
           <Text>停止</Text>
           <CodeBlock code={stopCode} />
-          <ApiButton color="primary" text="実行" handleClick={stop}></ApiButton>
+          <ApiButton color="primary" text="実行する" handleClick={stop}></ApiButton>
         </Section>
         <SampleList />
       </Layout>

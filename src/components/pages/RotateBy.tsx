@@ -82,7 +82,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={rotateBy}
             ></ApiButton>
           </ButtonLayout>
@@ -94,7 +94,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={reverseRotateBy}
             ></ApiButton>
           </ButtonLayout>
@@ -106,7 +106,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={singleRotateBy}
             ></ApiButton>
           </ButtonLayout>
@@ -118,7 +118,7 @@ const RotateContainer: FC = () => {
           <ButtonLayout>
             <ApiButton
               color="primary"
-              text="実行"
+              text="実行する"
               handleClick={syncRotateBy}
             ></ApiButton>
           </ButtonLayout>
@@ -126,7 +126,7 @@ const RotateContainer: FC = () => {
         <Section>
           <Text>停止</Text>
           <CodeBlock code={stopCode} />
-          <ApiButton color="primary" text="実行" handleClick={stop}></ApiButton>
+          <ApiButton color="primary" text="実行する" handleClick={stop}></ApiButton>
         </Section>
         <SampleList />
       </Layout>

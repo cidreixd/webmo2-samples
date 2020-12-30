@@ -42,7 +42,7 @@ export const samplePages = [
   },
   {
     key: 'UDP',
-    name: '相対角度を指定して回転する',
+    name: 'スマホのセンサを利用したインタラクション設計例',
     section: sections[1],
   },
   {

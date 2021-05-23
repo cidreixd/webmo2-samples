@@ -12,7 +12,7 @@ export const sections = [
 export const samplePages = [
   {
     key: 'rotate',
-    name: '回転する',
+    name: '回転し続ける',
     section: sections[0],
   },
   {
@@ -31,23 +31,8 @@ export const samplePages = [
     section: sections[0],
   },
   {
-    key: 'get_rotation',
-    name: '相対角度を指定して回転する',
-    section: sections[0],
-  },
-  {
-    key: 'reset_rotation',
-    name: '相対角度を指定して回転する',
-    section: sections[0],
-  },
-  {
     key: 'UDP',
     name: 'スマホのセンサを利用したインタラクション設計例',
-    section: sections[1],
-  },
-  {
-    key: 'sync',
-    name: '別々の引数で同時に実行',
     section: sections[1],
   },
 ]

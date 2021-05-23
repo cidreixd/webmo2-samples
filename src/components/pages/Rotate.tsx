@@ -7,13 +7,17 @@ import { Section } from '../atoms/Section'
 import { WebmoStatus } from '../molecules/WebmoStatus'
 import { ApiButton, ButtonLayout } from '../atoms/ApiButton'
 import { SampleList } from '../molecules/SampleList'
-import webmo from 'webmo2-library-javascript'
+import webmo from 'webmo2-js'
 
 const RotateContainer: FC = () => {
   const sample = getSamplePage('rotate')
 
   const rotateCode = `
     webmo.motor.rotate({ speed: 90 })
+  `
+
+  const stopCode = `
+    webmo.motor.stop()
   `
 
   const slowRotateCode = `
@@ -47,12 +51,12 @@ const RotateContainer: FC = () => {
     // webmo.motor.rotate([{ speed: 180 }, { speed: -90 }])
   `
 
-  const stopCode = `
-    webmo.motor.stop()
-  `
-
   const rotate = () => {
     return webmo.motor.rotate({ speed: 90 })
+  }
+
+  const stop = () => {
+    return webmo.motor.stop()
   }
 
   const slowRotate = () => {
@@ -83,10 +87,6 @@ const RotateContainer: FC = () => {
     return webmo.motor.rotate({ speed: 180 }, { speed: -90 })
   }
 
-  const stop = () => {
-    return webmo.motor.stop()
-  }
-
   return (
     <>
       <Layout>
@@ -101,8 +101,17 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={rotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
+        </Section>
+        <Section>
+          <Text>停止</Text>
+          <CodeBlock code={stopCode} />
+          <ApiButton
+            color="primary"
+            text="実行する"
+            handleClick={stop}
+          />
         </Section>
         <Section>
           <Text>ゆっくり回転する</Text>
@@ -113,7 +122,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={slowRotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -125,7 +134,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={fastRotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -137,7 +146,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={reverseRotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -149,7 +158,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={singleRotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -163,13 +172,8 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={syncRotate}
-            ></ApiButton>
+            />
           </ButtonLayout>
-        </Section>
-        <Section>
-          <Text>停止</Text>
-          <CodeBlock code={stopCode} />
-          <ApiButton color="primary" text="実行する" handleClick={stop}></ApiButton>
         </Section>
         <SampleList />
       </Layout>

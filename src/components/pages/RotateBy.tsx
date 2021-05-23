@@ -7,9 +7,9 @@ import { Section } from '../atoms/Section'
 import { WebmoStatus } from '../molecules/WebmoStatus'
 import { ApiButton, ButtonLayout } from '../atoms/ApiButton'
 import { SampleList } from '../molecules/SampleList'
-import webmo from 'webmo2-library-javascript'
+import webmo from 'webmo2-js'
 
-const RotateContainer: FC = () => {
+const RotateByContainer: FC = () => {
   const sample = getSamplePage('rotate_by')
 
   const rotateByCode = `
@@ -41,10 +41,6 @@ const RotateContainer: FC = () => {
     )
   `
 
-  const stopCode = `
-    webmo.motor.stop()
-  `
-
   const rotateBy = () => {
     return webmo.motor.rotateBy({ degree: 360, speed: 180 })
   }
@@ -66,10 +62,6 @@ const RotateContainer: FC = () => {
     )
   }
 
-  const stop = () => {
-    return webmo.motor.stop()
-  }
-
   return (
     <>
       <Layout>
@@ -84,7 +76,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={rotateBy}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -96,7 +88,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={reverseRotateBy}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -108,7 +100,7 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={singleRotateBy}
-            ></ApiButton>
+            />
           </ButtonLayout>
         </Section>
         <Section>
@@ -120,13 +112,8 @@ const RotateContainer: FC = () => {
               color="primary"
               text="実行する"
               handleClick={syncRotateBy}
-            ></ApiButton>
+            />
           </ButtonLayout>
-        </Section>
-        <Section>
-          <Text>停止</Text>
-          <CodeBlock code={stopCode} />
-          <ApiButton color="primary" text="実行する" handleClick={stop}></ApiButton>
         </Section>
         <SampleList />
       </Layout>
@@ -134,4 +121,4 @@ const RotateContainer: FC = () => {
   )
 }
 
-export default RotateContainer
+export default RotateByContainer

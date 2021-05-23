@@ -11392,9 +11392,9 @@ webidl-conversions@^4.0.2:
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
   integrity sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
 
-"webmo2-library-javascript@https://github.com/cidreixd/webmo2-library-javascript.git":
+"webmo2-js@https://github.com/cidreixd/webmo2-js.git":
   version "1.0.0"
-  resolved "https://github.com/cidreixd/webmo2-library-javascript.git#fb55b1300a5328e318d894570d1c81bcb865b81b"
+  resolved "https://github.com/cidreixd/webmo2-js.git#e58cc4cc4681569f835b305355e1cc1bdaea0e96"
   dependencies:
     "@types/url-join" "^4.0.0"
     "@types/uuid" "^8.3.0"

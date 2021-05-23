@@ -11,6 +11,8 @@ import App from './App'
 import { store } from './redux'
 import Rotate from './components/pages/Rotate'
 import RotateBy from './components/pages/RotateBy'
+import RotateTo from './components/pages/RotateTo'
+import Stop from './components/pages/Stop'
 import UDP from './components/pages/UDP'
 
 function _ScrollToTop(props: any) {
@@ -29,6 +31,8 @@ ReactDOM.render(
         <Route exact path="/" component={App}></Route>
         <Route path="/rotate" component={Rotate}></Route>
         <Route path="/rotate_by" component={RotateBy}></Route>
+        <Route path="/rotate_to" component={RotateTo}></Route>
+        <Route path="/stop" component={Stop}></Route>
         <Route path="/UDP" component={UDP}></Route>
       </ScrollToTop>
     </Router>

@@ -24,7 +24,7 @@
     "react-scripts": "3.4.3",
     "styled-components": "^5.2.0",
     "typescript": "~3.7.2",
-    "webmo2-library-javascript": "https://github.com/cidreixd/webmo2-library-javascript.git"
+    "webmo2-js": "https://github.com/cidreixd/webmo2-js.git"
   },
   "scripts": {
     "start": "react-scripts start",

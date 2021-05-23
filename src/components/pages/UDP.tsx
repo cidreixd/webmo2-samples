@@ -5,14 +5,13 @@ import { Layout } from '../atoms/Layout'
 import { SubText, Text, Title } from '../atoms/Text'
 import { Section } from '../atoms/Section'
 import { WebmoStatus } from '../molecules/WebmoStatus'
-import { ApiButton, ButtonLayout } from '../atoms/ApiButton'
 import { SampleList } from '../molecules/SampleList'
-import webmo from 'webmo2-library-javascript'
+import webmo from 'webmo2-js'
+import { ApiButton } from '../atoms/ApiButton'
 
 const RotateContainer: FC = () => {
   const sample = getSamplePage('UDP')
-
-  let target = ''
+  const [data, setData] = useState('')
 
   const gravityCode = `
     webmo.socketClient.events.on('UDP', (data) => {
@@ -24,27 +23,16 @@ const RotateContainer: FC = () => {
 
   useEffect(() => {
     const onUDP = async (data: any) => {
-      console.log(data)
+      setData(JSON.stringify(data, null, '　'))
       if (data?.sensordata?.gravity) {
-        onGravity(data.sensordata.gravity)
+        const { x, y } = data.sensordata.gravity
+        webmo.motor.rotate({ speed: x * 800 }, { speed: y * 800 })
       }
     }
     webmo.socketClient.events.on('UDP', onUDP)
   }, [])
 
-  const gravity = () => {
-    target = 'gravity'
-    return new Promise<void>((resolve) => resolve(void 0))
-  }
-
-  const onGravity = (gravity: any) => {
-    if (target !== 'gravity') return
-    const { x, y, z } = gravity
-    webmo.motor.rotate({ speed: x * 800 }, { speed: y * 800 })
-  }
-
   const stop = () => {
-    target = ''
     return webmo.motor.stop()
   }
 
@@ -54,31 +42,36 @@ const RotateContainer: FC = () => {
         <Title>{sample?.displayName}</Title>
         <WebmoStatus />
         <Section>
-          <Text>説明ページへのリンク</Text>
-          {/* <Link></Link> */}
+          <Text>
+            <a href="https://zig-project.com/" target="_black" rel="noopener">
+              ZIG Simulatorアプリ
+            </a>
+            を使うと簡単にスマホセンサとの連携ができます
+          </Text>
+          <SubText>
+          ZIG Simulatorの設定値
+            <ul>
+              <li>IP ADDRESS: WebmoのIPアドレスを入力</li>
+              <li>PORT NUNBER: 5555を入力</li>
+            </ul>
+          </SubText>
         </Section>
         <Section>
-          <Text>重力加速度</Text>
-          <SubText></SubText>
+          <Text>スマホの傾きに応じて速度が変化します</Text>
+          <SubText>ZIG Simulatorアプリを起動し、GRAVITYデータを送ると開始します。</SubText>
           <CodeBlock code={gravityCode} />
-          <ButtonLayout>
-            <ApiButton
-              color="primary"
-              text="開始する"
-              handleClick={gravity}
-            ></ApiButton>
-          </ButtonLayout>
         </Section>
         <Section>
-          <Text>インタラクションの停止</Text>
-          <SubText></SubText>
-          <ButtonLayout>
-            <ApiButton
-              color="primary"
-              text="停止する"
-              handleClick={stop}
-            ></ApiButton>
-          </ButtonLayout>
+          <Text>受け取ったデータの表示</Text>
+          <SubText>{data}</SubText>
+        </Section>
+        <Section>
+          <Text>モータの停止</Text>
+          <ApiButton
+            color="primary"
+            text="実行する"
+            handleClick={stop}
+          />
         </Section>
         <SampleList />
       </Layout>

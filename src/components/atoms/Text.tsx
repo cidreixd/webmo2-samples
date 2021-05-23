@@ -5,6 +5,7 @@ export const Text = styled.div`
   line-height: 1.6;
   padding: 8px 0;
   color: #222;
+  white-space: pre-line;
 `
 
 export const ListText = styled.div`
@@ -18,6 +19,7 @@ export const SubText = styled.div`
   color: #555;
   line-height: 1.6;
   padding: 4px 0 8px 0;
+  white-space: pre-line;
 `
 
 export const Title = styled.h2`

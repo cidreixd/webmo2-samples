@@ -1,6 +1,6 @@
 # Webmo2 サンプル集
 
-Webmo2のJavaScriptライブラリを利用したサンプル集です。
+Webmo2のJavaScriptライブラリの使い方を実行しながら学べるサンプル集です。
 
 ## 使い方
 
@@ -12,8 +12,5 @@ Webmo2のJavaScriptライブラリを利用したサンプル集です。
 
 `yarn start`
 
-## サンプル
-
-## ドキュメント
 
 

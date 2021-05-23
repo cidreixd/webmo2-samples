@@ -10,6 +10,8 @@ Webmo2のJavaScriptライブラリを利用したサンプル集です。
 
 `yarn install`
 
+`yarn start`
+
 ## サンプル
 
 ## ドキュメント
